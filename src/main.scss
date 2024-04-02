@@ -1,0 +1,110 @@
+@import './variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    :root {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    :root {
+        font-size: 7px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    :root {
+        font-size: 6px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    :root {
+        font-size: 5px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    :root {
+        font-size: 10.5px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-height: 700px) and (min-width: 1160px) {
+    :root {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-height: 1000px) and (min-width: 1160px) {
+    :root {
+        font-size: 13px;
+    }
+}
+
+
+@media only screen and (min-height: 1080px) and (min-width: 1920px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+html,
+body {
+    font-family: "Playfair Display", serif;
+    user-select: none;
+}
+
+.button {
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.6rem;
+    --b: 3px;
+    /* border thickness */
+    --s: .45em;
+    /* size of the corner */
+    --color: #A4ACB2;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+
+    border: 0;
+
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button:active {
+    background: var(--color);
+    color: $background-color;
+}

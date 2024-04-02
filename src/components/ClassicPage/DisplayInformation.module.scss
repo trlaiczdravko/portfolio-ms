@@ -1,0 +1,152 @@
+@import '../../variables.scss';
+
+.container {
+    flex: 1 1 50%;
+    padding-left: 5rem;
+    margin-right: 5rem;
+    transform: translateY(-1rem);
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.wrap_paragraphs {
+    transform-origin: 100%;
+    opacity: 0;
+    width: 100%;
+    transition: all .3s linear;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    transform: scaleX(0);
+}
+
+.wrap_paragraphs_active {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.wrap_welcome {
+    transform-origin: 0;
+    opacity: 1;
+    transition: all .3s linear;
+    transform: scaleX(1);
+}
+
+.wrap_welcome_hidden {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+
+.hidden {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.heading_2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.heading_3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.paragraph {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+.paragraph:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.paragraphs {
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.paragraphs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.date {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.date_number {
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+.tech_container {
+    display: flex;
+    color: #fff;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.tech {
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    background-color: $color-linear-gradient-second;
+}
+
+.tech:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.link {
+    position: relative;
+    color: #ccc;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(to right, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        flex: 0 1 0%;
+        padding-right: 5rem;
+        margin-right: 0rem;
+        transform: translateY(-1rem);
+    }
+}

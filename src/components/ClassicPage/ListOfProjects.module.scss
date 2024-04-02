@@ -1,0 +1,112 @@
+@import '../../variables.scss';
+
+.container {
+    flex: 1 1 30%;
+    margin-left: 5rem;
+}
+
+.heading {
+    font-size: 2.6rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.list {
+    position: relative;
+    font-size: 1.5rem;
+    list-style: none;
+    padding-left: 2.5rem;
+    padding-top: 2.5rem;
+}
+
+.list_item {
+    margin-bottom: 2rem;
+}
+
+.paragraph {
+    position: relative;
+    padding-bottom: 5px;
+    display: inline;
+    cursor: pointer;
+    color: #ccc;
+    transition: .5s all;
+}
+
+.paragraph:hover {
+    color: #fff;
+}
+
+.paragraph::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(to right, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.list_before,
+.list_after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.list_before {
+    width: .3rem;
+    height: 9rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    background-image: linear-gradient(to bottom, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.list_after {
+    width: 9rem;
+    height: .3rem;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    background-image: linear-gradient(to right, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.list_before::before,
+.list_after::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+
+.list_before::before {
+    background-image: linear-gradient(to top, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.list_after::before {
+    background-image: linear-gradient(to left, $color-linear-gradient-first 0%, $color-linear-gradient-second 100%);
+}
+
+.list:hover .list_before::before,
+.list:hover .list_after::before {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        flex: 0 1 0%;
+        margin-left: 0rem;
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .container {
+        flex: 0 1 0%;
+        margin-left: 0rem;
+        margin-bottom: 5rem;
+    }
+}

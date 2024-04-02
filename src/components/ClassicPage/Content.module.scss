@@ -1,0 +1,44 @@
+.container {
+    position: relative;
+    height: calc(100% - 10rem);
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    width: 6.4rem;
+    height: 6.4rem;
+
+    cursor: pointer;
+    transition: .4s all;
+}
+
+.image:hover {
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        transform: translateY(-5rem);
+    }
+
+    .image {
+        top: 10rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        transform: translateY(-6rem);
+    }
+
+    .image {
+        top: 11rem;
+    }
+}
