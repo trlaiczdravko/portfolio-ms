@@ -30,6 +30,11 @@ const ListOfProjects: React.FC<ComponentProps> = ({
             {headingList[1]}
           </p>
         </li>
+        <li className={style.list_item}>
+          <p onClick={() => handleClick(3)} className={style.paragraph}>
+            {headingList[3]}
+          </p>
+        </li>
       </ul>
     </div>
   );
